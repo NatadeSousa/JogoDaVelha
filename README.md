@@ -1,2 +1,2 @@
 # RepositorioTeste
- Repositorio criado para testar o funcionamento do GitHubDesktop.
+ Jogo da velha com implementação simples.
