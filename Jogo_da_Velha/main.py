@@ -51,12 +51,12 @@ while(True):
     try:
         linha = int(movimento[0]) - 1    
         coluna = int(movimento[1]) - 1    
-        #Coloquei lin/col - 1 para que o usuário não tenha que ficar pensando que a 1ª linhas é a linha 0, 1ª coluna é coluna 0...
+        #Coloquei lin/col - 1 para que o usuário não tenha que ficar pensando que a 1ª linha é a linha 0, 1ª coluna é coluna 0...
     except:
         print("Digite os dados neste formato: (1,1) (2,2) (1,2)")
  
-    if(linha >= 0 and linha <= 2) and (coluna >= 0 and coluna <= 2):
-        realizar_movimento(linha, coluna, num_jogador)
+    if(linha >= 0 and linha <= 2) and (coluna >= 0 and coluna <= 2): #SE O MOVIMENTO DO USUÁRIO FOR VÁLIDO
+        realizar_movimento(linha, coluna, num_jogador) 
         num_jogador = 1 if num_jogador == 2 else 2 #TROCANDO A VEZ DO JOGADOR
     else:
         print("Movimento inválido! Os valores válidos para lin e col vão de 1 a 3.")
