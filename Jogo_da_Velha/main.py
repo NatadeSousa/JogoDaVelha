@@ -1,5 +1,8 @@
 import os
 
+#TODO: Implementar método de reinicar o jogo
+#TODO: Refatorar método realizar_movimento() de modo que ele não realize tantas funções como: verificar se a posição já está ocupada
+#                                                                                                      imprimir o tabuleiro na tela...
 
 coluna_1 = ["   ","   ","   "]
 coluna_2 = ["   ","   ","   "]
@@ -66,8 +69,8 @@ def verificar_vencedor():
             if posicao_o in combinacao_vencedora:
                 counter += 1
         if counter == 3: #Caso o jogador X tenha sido o vencedor
-            print(f"{"-" * 10} O JOGADOR 'O' FOI O VENCEDOR {"-" * 10}")
-            print()
+            print(f"{"-" * 10} O JOGADOR 'O' FOI O VENCEDOR {"-" * 10}\n\n")
+
             return True
         else:
             counter = 0 #Zerando o contador para poder verificar se o Jogador 'X' foi o vencedor
@@ -106,10 +109,15 @@ while(True):
             jogadas_realizadas += 1 # Contando a quantidade de jogadas para verificar situação de empate
             empate = True if jogadas_realizadas == 9 else False
             
-            if(verificar_vencedor() or empate): #Verificando se houve um vencedor ou empate entre os jogadores
+            if verificar_vencedor(): #Verificando se houve um vencedor ou empate entre os jogadores
+                break
+
+            if empate:
+                print(f"{"-" * 10} NÃO HOUVE VENCEDOR NESTA RODADA! {"-" * 10}\n\n")
                 break
             else:
                 num_jogador = 1 if num_jogador == 2 else 2 #Trocando a vez do jogador caso não haja vencedor nem empate         
+            
         else:
             print("Movimento inválido! Essa posição já está ocupada.")
     else:
