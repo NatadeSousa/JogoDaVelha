@@ -1,3 +1,3 @@
 # JogoDaVelha
-  Jogo da velha com implementação simples.
+  Jogo da velha em Java com implementação em console seguindo o paradigma de POO
 
